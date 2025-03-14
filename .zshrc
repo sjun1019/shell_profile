@@ -82,5 +82,8 @@ alias remoteadb='adb kill-server && adb -a nodaemon server start'
 alias traceh='java -jar ~/AlphaOrionTraceAnalyzer_linux.jar'
 alias tracea='java -jar ~/AlphaOrionTraceAnalyzer_aidl.jar'
 
+alias loghidl='adb logcat | grep BcRadioDef'
+alias logaidl='adb logcat | grep BcRadioAidlDef'
+
 #export ADB_SERVER_SOCKET=tcp:192.168.0.88:5037
 #alias scrcpy='scrcpy --tunnel-host=192.168.0.88'
