@@ -35,8 +35,8 @@ alias glog='git log'
 alias gnewb='git checkout -B'
 alias greset='git reset --hard'
 alias gpull='git pull'
-alias gpush='cd ~/broadcast_radio && ./util/genProjectCode.py ALL && git push'
-alias setpall='cd ~/broadcast_radio && ./util/genProjectCode.py ALL'
+alias gpush='./util/genProjectCode.py ALL && git push'
+alias setpall='./util/genProjectCode.py ALL'
 alias gcommit='git commit -m'
 alias gshow='git show'
 alias gpullr2d='cd ~/broadcast_radio/broadcast_radio_2.0/r2dRadio && git pull'
@@ -54,15 +54,15 @@ function gcheckhal {
 alias getp='cd ~/broadcast_radio && ./get_proj.sh'
 
 function setp {
-	cd ~/broadcast_radio && ./set_env.sh ~/aosp$1 $2
+	./set_env.sh ~/aosp$1 $2
 }
 
 function sethidl {
-	cd ~/broadcast_radio && ./set_env_20.sh ~/aosp$1 $2
+	./set_env_20.sh ~/aosp$1 $2
 }
 
 function setaidl {
-	cd ~/broadcast_radio && ./set_env_aidl.sh ~/aosp$1 $2
+	./set_env_aidl.sh ~/aosp$1 $2
 }
 
 function aidl {
@@ -172,6 +172,7 @@ function insapp {
 
 alias halname='adb shell getprop | grep broadcastradio'
 alias halfile='adb shell ls /vendor/bin/hw/ | grep broadcastradio'
+alias rmhal='adb shell rm /vendor/bin/hw/*broadcastradio*'
 
 alias aroot='adb root'
 alias aremount='adb remount'
@@ -181,3 +182,4 @@ alias tracea='java -jar ~/AlphaOrionTraceAnalyzer_aidl.jar'
 
 alias loghidl='adb logcat | grep BcRadioDef'
 alias logaidl='adb logcat | grep BcRadioAidlDef'
+alias loginfo='adb logcat | grep currProgramInfo'

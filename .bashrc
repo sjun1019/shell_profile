@@ -118,4 +118,6 @@ fi
 
 set -o vi
 
-export PATH="$PATH:~/platform-tools"
+export $(dbus-launch)
+export PATH="$PATH:/home/joseph/platform-tools/:/opt/android-studio/bin/"
+export CROSS_COMPILE="/home/joseph/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-"
